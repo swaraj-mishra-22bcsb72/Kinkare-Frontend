@@ -2,8 +2,10 @@ import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import Footer from '../components/Footer';
 import { Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
+  const navigate = useNavigate();
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#18181b', color: '#f5f5dc', display: 'flex', flexDirection: 'column' }}>
       <Navbar />
@@ -16,6 +18,7 @@ export default function Home() {
             variant="primary"
             style={{ backgroundColor: '#7c3aed', borderColor: '#7c3aed', color: '#f5f5dc', minWidth: 160, fontWeight: 500, boxShadow: '0 4px 24px 0 rgba(124,58,237,0.15)' }}
             size="lg"
+            onClick={() => navigate('/analyze')}
           >
             try out
           </Button>

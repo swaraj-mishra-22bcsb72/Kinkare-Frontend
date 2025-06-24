@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { Card, Button, Spinner } from 'react-bootstrap';
+import { Card, Button, Spinner, Modal } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 export default function UploadCard() {
   const [isDragging, setIsDragging] = useState(false);
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
 
   const handleDragOver = (e) => {
@@ -35,10 +36,12 @@ export default function UploadCard() {
 
   const handleAnalyze = () => {
     setLoading(true);
+    setShowModal(true);
     setTimeout(() => {
       setLoading(false);
+      setShowModal(false);
       navigate('/result');
-    }, 1800);
+    }, 3000); // Mock delay for analysis
     // TODO: Integrate backend API call here
   };
 
@@ -97,13 +100,16 @@ export default function UploadCard() {
             animation: 'fadeIn 1.5s'
           }}
         >
-          {loading ? (
-            <Spinner animation="border" size="sm" style={{ color: 'var(--color-beige)' }} />
-          ) : (
-            'Analyze'
-          )}
+          Analyze
         </Button>
       </div>
+
+      <Modal show={showModal} centered backdrop="static" keyboard={false} dialogClassName="custom-modal">
+        <Modal.Body className="text-center" style={{ backgroundColor: 'var(--color-dark-elevate)', color: 'var(--color-beige)', borderRadius: '8px', padding: '30px' }}>
+          <Spinner animation="border" style={{ color: 'var(--color-purple)', width: '3rem', height: '3rem' }} />
+          <p className="mt-3 mb-0" style={{ fontFamily: 'Poppins, sans-serif', fontSize: '1.2rem', fontWeight: 500 }}>Analyzing your file, please wait...</p>
+        </Modal.Body>
+      </Modal>
     </div>
   );
 }
