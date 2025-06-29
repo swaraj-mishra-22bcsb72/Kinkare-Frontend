@@ -16,8 +16,8 @@ export default function CallWindow({ summary }) {
   };
 
   return (
-    <div className="p-4 rounded shadow-lg text-center" style={{ backgroundColor: 'var(--color-surface)', color: 'var(--color-text)', fontFamily: 'Poppins, sans-serif', animation: 'fadeIn 1s', maxWidth: '500px', width: '100%', minHeight: '300px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', borderRadius: '15px', boxShadow: '0 10px 30px rgba(var(--color-primary-rgb), 0.08)' }}>
-      <h3 style={{ color: 'var(--color-primary)', marginBottom: '1rem', fontWeight: 700, letterSpacing: '0.5px' }}>Call Window</h3>
+    <div className="p-4 rounded shadow-lg text-center d-flex flex-column align-items-center justify-content-center" style={{ backgroundColor: 'var(--color-surface)', color: 'var(--color-text)', fontFamily: 'Poppins, sans-serif', animation: 'fadeIn 1s', maxWidth: '430px', minWidth: '320px', width: '95%', minHeight: '300px', borderRadius: '15px', boxShadow: '0 10px 30px rgba(var(--color-primary-rgb), 0.08)' }}>
+      <h3 style={{ color: 'var(--color-primary)', marginBottom: '18px', marginTop: 0, fontWeight: 700, letterSpacing: '0.5px' }}>Call Window</h3>
       <Form.Group className="mb-3 w-100" style={{ maxWidth: 350, margin: '0 auto' }}>
         <Form.Label style={{ color: 'var(--color-text-secondary)' }}>Select Language</Form.Label>
         <Form.Select
