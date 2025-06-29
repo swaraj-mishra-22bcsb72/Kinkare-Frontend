@@ -5,15 +5,17 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 export default function Analyze() {
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: 'var(--color-dark-bg)', color: 'var(--color-beige)', display: 'flex', flexDirection: 'column', fontFamily: 'Poppins, sans-serif' }}>
+    <div className="analyze-container d-flex flex-column align-items-center justify-content-start" style={{ minHeight: '100vh', backgroundColor: 'var(--color-background)', color: 'var(--color-text)', fontFamily: 'Poppins, sans-serif' }}>
       <Navbar />
-      <Container fluid className="flex-grow-1 d-flex flex-column justify-content-center align-items-center py-4">
-        <Row className="w-100 justify-content-center align-items-center" style={{ minHeight: 400 }}>
-          <Col xs={12} md={6} className="d-flex align-items-center justify-content-center">
-            <UploadCard />
-          </Col>
-        </Row>
-      </Container>
+      <div style={{ minHeight: '100vh', background: 'var(--color-background)', color: 'var(--color-text)', fontFamily: 'Poppins, sans-serif', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', paddingTop: '110px', paddingBottom: '90px' }}>
+        <Container style={{ width: '100%', maxWidth: '900px', margin: '0 auto', paddingTop: '32px', paddingBottom: '32px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <Row className="w-100 justify-content-center align-items-center" style={{ minHeight: 400 }}>
+            <Col xs={12} className="d-flex align-items-center justify-content-center" style={{ width: '100%' }}>
+              <UploadCard />
+            </Col>
+          </Row>
+        </Container>
+      </div>
       <Footer />
     </div>
   );

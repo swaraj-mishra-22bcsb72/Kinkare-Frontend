@@ -4,9 +4,11 @@ import Analyze from './pages/Analyze';
 import Result from './pages/Result';
 import About from './pages/About';
 
+
 function App() {
   return (
     <Router>
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/analyze" element={<Analyze />} />
